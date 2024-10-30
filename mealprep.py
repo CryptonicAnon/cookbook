@@ -34,20 +34,20 @@ def save_to_csv(recipes, ingredient):
     else:
         return None
 
-def run():
-    ingredient = input('Enter an ingredient: ')
-    results = recipe_search(ingredient)
-    save_to_csv(results, ingredient)
+# def run():
+#     ingredient = input('Enter an ingredient: ')
+#     results = recipe_search(ingredient)
+#     save_to_csv(results, ingredient)
     
-    try:
-        with open(f"{ingredient}_recipes.csv", newline='', encoding='utf-8') as csvfile:
-            reader = csv.reader(csvfile)
-            for row in reader:
-                print(', '.join(row) + '\n')
-    except FileNotFoundError:
-        print("CSV file does not exist.")
+#     try:
+#         with open(f"{ingredient}_recipes.csv", newline='', encoding='utf-8') as csvfile:
+#             reader = csv.reader(csvfile)
+#             for row in reader:
+#                 print(', '.join(row) + '\n')
+#     except FileNotFoundError:
+#         print("CSV file does not exist.")
 
-if __name__ == "__main__":
-    while True:
-        run()
+# if __name__ == "__main__":
+#     while True:
+#         run()
      

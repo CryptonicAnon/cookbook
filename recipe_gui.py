@@ -13,6 +13,8 @@ def search_recipes():
     
     if recipes:
         save_to_csv(recipes, ingredient)
+        num_of_recipes = len(recipes)
+        results_text.insert(tk.END, f"Number of recipes: {num_of_recipes}\n\n")
         for recipe in recipes:
             recipe_info = recipe["recipe"]
             recipe_name = recipe_info["label"]
@@ -45,5 +47,6 @@ search_button.pack()
 
 results_text = tk.Text(window, height = (screen_height // 2), width = (screen_width // 2))
 results_text.pack()
+# results_text.config(state=tk.DISABLED)
 
 window.mainloop()
