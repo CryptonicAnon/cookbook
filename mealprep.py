@@ -30,11 +30,9 @@ def save_to_csv(recipes, ingredient):
                 recipe_url = recipe_info['url']
                 ingredients = "\n".join(recipe_info['ingredientLines'])
                 writer.writerow([recipe_name, recipe_url, ingredients])
-        
-        print(f"{len(recipes)} recipes saved to {file_name}\n")
-        
+            return file_name
     else:
-        print("No recipes found")
+        return None
 
 def run():
     ingredient = input('Enter an ingredient: ')
