@@ -20,17 +20,17 @@ def save_to_csv(recipes, ingredient):
     if recipes:
         file_name = f"{ingredient}_recipes.csv"
 
-        with open(file_name, mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            writer.writerow(['Recipe', 'URL', 'Ingredients'])
+        # with open(file_name, mode='w', newline='', encoding='utf-8') as file:
+            # writer = csv.writer(file)
+            # writer.writerow(['Recipe', 'URL', 'Ingredients'])
 
-            for recipe in recipes:
-                recipe_info = recipe['recipe']
-                recipe_name = recipe_info['label']
-                recipe_url = recipe_info['url']
-                ingredients = "\n".join(recipe_info['ingredientLines'])
-                writer.writerow([recipe_name, recipe_url, ingredients])
-            return file_name
+        for recipe in recipes:
+            recipe_info = recipe['recipe']
+            recipe_name = recipe_info['label']
+            recipe_url = recipe_info['url']
+            ingredients = "\n".join(recipe_info['ingredientLines'])
+            # writer.writerow([recipe_name, recipe_url, ingredients])
+        return file_name
     else:
         return None
 
