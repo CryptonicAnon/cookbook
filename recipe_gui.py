@@ -42,8 +42,11 @@ ingredient_label.pack()
 ingredient_entry = tk.Entry(window, width = 30)
 ingredient_entry.pack()
 
+ingredient_entry.bind("<Return>", lambda event: search_recipes())
+
 search_button = tk.Button(window, text = "Search Recipes", command = search_recipes)
 search_button.pack()
+
 
 results_text = tk.Text(window, height = (screen_height // 2), width = (screen_width // 2))
 results_text.pack()
